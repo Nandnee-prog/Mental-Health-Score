@@ -1,5 +1,5 @@
 // ---------- Config ----------
-const API_URL = "hhttps://mental-health-score-6atc.onrender.com";
+const API_URL = "https://mental-health-score-new-c98d.onrender.com";
 const DIAL_CIRCUMFERENCE = 2 * Math.PI * 60; // matches the SVG circle r=60
 
 // ---------- Elements ----------
@@ -158,7 +158,7 @@ form.addEventListener("submit", async (event) => {
     const isNetworkError = err instanceof TypeError;
     showFormError(
       isNetworkError
-        ? "Couldn't reach the backend. Make sure it's running at http://127.0.0.1:2200."
+        ? "Couldn't reach the backend. Make sure it's running at https://mental-health-score-new-c98d.onrender.com."
         : err.message
     );
   } finally {
