@@ -1,5 +1,5 @@
 // ---------- Config ----------
-const API_URL = "http://127.0.0.1:2200/predict";
+const API_URL = "hhttps://mental-health-score-6atc.onrender.com";
 const DIAL_CIRCUMFERENCE = 2 * Math.PI * 60; // matches the SVG circle r=60
 
 // ---------- Elements ----------
