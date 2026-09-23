@@ -1,0 +1,343 @@
+:root {
+  --bg: #F5F3EC;
+  --paper: #FFFFFF;
+  --ink: #1E2A24;
+  --ink-soft: #5B6960;
+  --teal: #2F6F62;
+  --teal-deep: #1F4F45;
+  --sage: #B9CCBE;
+  --sage-pale: #E7EEE7;
+  --amber: #C98A3E;
+  --error: #A9432F;
+  --error-bg: #FBEAE6;
+  --radius: 14px;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+
+.hero-eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  color: var(--teal-deep);
+}
+
+.hero-sub {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+
+/* ---------- Layout ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px solid rgba(31, 79, 69, 0.08);
+  padding: 32px;
+}
+
+/* ---------- Form ---------- */
+
+.group {
+  border: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.group:last-of-type { margin-bottom: 20px; }
+
+.group legend {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--teal-deep);
+  padding: 0 0 14px;
+  width: 100%;
+  border-bottom: 1px solid var(--sage-pale);
+  margin-bottom: 18px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.field-row.three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.field-row:last-child { margin-bottom: 0; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.field input,
+.field select {
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  padding: 11px 12px;
+  border-radius: 9px;
+  border: 1px solid #D8DED8;
+  background: #FCFBF8;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input::placeholder { color: #A3ADA3; }
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(47, 111, 98, 0.14);
+}
+
+.form-error {
+  background: var(--error-bg);
+  color: var(--error);
+  border-radius: 9px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  margin: 0 0 18px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--teal-deep);
+  color: #F5F3EC;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover { background: var(--teal); }
+.submit-btn:active { transform: scale(0.99); }
+.submit-btn:disabled { opacity: 0.7; cursor: progress; }
+
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(245, 243, 236, 0.35);
+  border-top-color: #F5F3EC;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Result card ---------- */
+
+.result-card {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  text-align: center;
+}
+
+.result-empty {
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.empty-mark {
+  font-size: 2.2rem;
+  color: var(--sage);
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.result-label {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 0 0 6px;
+}
+
+.score-dial {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 4px 0 6px;
+}
+
+.dial-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.dial-track {
+  fill: none;
+  stroke: var(--sage-pale);
+  stroke-width: 10;
+}
+
+.dial-fill {
+  fill: none;
+  stroke: var(--amber);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 377;
+  stroke-dashoffset: 377;
+  transition: stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.4s ease;
+}
+
+.dial-number {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--teal-deep);
+}
+
+.result-tag {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 4px 0 2px;
+  color: var(--teal-deep);
+}
+
+.result-note {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0 0 18px;
+  max-width: 30ch;
+}
+
+.reset-btn {
+  background: none;
+  border: 1px solid var(--sage);
+  color: var(--teal-deep);
+  border-radius: 9px;
+  padding: 9px 18px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.reset-btn:hover { background: var(--sage-pale); }
+
+/* ---------- Footer ---------- */
+
+.foot-note {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.foot-note code {
+  background: var(--sage-pale);
+  padding: 2px 6px;
+  border-radius: 5px;
+  color: var(--teal-deep);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .result-card {
+    position: static;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page { padding: 32px 16px 48px; }
+  .card { padding: 22px; }
+  .field-row,
+  .field-row.three {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dial-fill { transition: none; }
+  .btn-spinner { animation: none; }
+}
